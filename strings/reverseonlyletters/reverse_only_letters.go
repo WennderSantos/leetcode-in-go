@@ -1,12 +1,13 @@
-package main
-
-import "fmt"
+package reverseonlyletters
 
 func isLetter(asciiChar rune) bool {
 	return asciiChar >= 'a' && asciiChar <= 'z' || asciiChar >= 'A' && asciiChar <= 'Z'
 }
 
-func reverseOnlyLetters(S string) string {
+//ReverseOnlyLetters executes in
+//Time: O(n)
+//Memory: O(1) using two pointers (low and high) approach
+func ReverseOnlyLetters(S string) string {
 	i, j, str := 0, len(S)-1, []rune(S)
 
 	for i < j {
@@ -28,8 +29,4 @@ func reverseOnlyLetters(S string) string {
 	return string(str)
 }
 
-func main() {
-	result := reverseOnlyLetters("Test1ng-Leet=code-Q!")
-
-	fmt.Println(result) //Qedo1ct-eeLg=ntse-T!
-}
+//917. Reverse Only Letters
